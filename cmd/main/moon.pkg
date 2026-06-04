@@ -1,0 +1,7 @@
+// import {
+//   "username/moon_control" @lib,
+// }
+
+options(
+  "is-main": true,
+)

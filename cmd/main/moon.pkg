@@ -1,6 +1,8 @@
-// import {
-//   "username/moon_control" @lib,
-// }
+
+import {
+  "githubpro/moon_control/pid" @pid,
+}
+
 
 options(
   "is-main": true,

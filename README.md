@@ -26,11 +26,17 @@ Work in progress.
 ## Development Progress
 
 ### Day 1
-
 - Created MoonControl project
 - Initialized MoonBit development environment
 - Designed project architecture
 - Planned core algorithm modules
+
+### Day 2
+- Implemented basic PID controller
+- Added PID state management
+- Added proportional, integral and derivative calculation
+- Added PID update interface
+- Verified PID closed-loop response with example
 
 ## Planned Features
 

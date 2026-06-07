@@ -1,6 +1,7 @@
 
 import {
   "githubpro/moon_control/pid" @pid,
+  "githubpro/moon_control/filter" @filter,
 }
 
 

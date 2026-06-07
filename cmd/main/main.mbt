@@ -4,23 +4,32 @@
 /// Run with `moon run cmd/main` from the project root.
 fn main {
 
-  let controller =@pid.PID::new(2.0, 0.5, 0.1, 0.01) .set_output_limit( -20.0, 20.0) .set_integral_limit( -10.0, 10.0)
+
+  let lowpass = @filter.LowPassFilter::new( 0.2)
 
 
-  let mut position = 0.0
+  let average = @filter.MovingAverageFilter::new( 5)
 
 
-  for i in 0..<20 {
+  let data = [
+    10.0,
+    30.0,
+    5.0,
+    50.0,
+    20.0
+  ]
 
 
-    let output = controller.update( 100.0, position)
+  for value in data {
 
 
-    position = position + output * 0.01
+    let a = lowpass.update(value)
 
 
-    println(
-      "step=" + i.to_string() + " pos=" + position.to_string() + " out=" + output.to_string())
+    let b = average.update(value)
+
+
+    println("input=" + value.to_string() + " lowpass=" + a.to_string() + " average=" + b.to_string())
 
   }
 

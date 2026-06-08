@@ -86,4 +86,4 @@ Work in progress.
 
 ## License
 
-MIT
+Apache-2.0

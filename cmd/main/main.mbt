@@ -5,31 +5,34 @@
 fn main {
 
 
-  let lowpass = @filter.LowPassFilter::new( 0.2)
+  let profile = @trajectory.TrapezoidProfile::new(0.0, 100.0, 20.0, 50.0)
 
 
-  let average = @filter.MovingAverageFilter::new( 5)
+  let filter = @filter.LowPassFilter::new(0.2)
 
 
-  let data = [
-    10.0,
-    30.0,
-    5.0,
-    50.0,
-    20.0
-  ]
+  let controller = @pid.PID::new(1.0, 0.1, 0.01, 0.1)
 
 
-  for value in data {
+  let mut i = 0
 
 
-    let a = lowpass.update(value)
+  while i < 20 {
 
 
-    let b = average.update(value)
+    let (target, _) = profile.update(0.1)
 
 
-    println("input=" + value.to_string() + " lowpass=" + a.to_string() + " average=" + b.to_string())
+    let feedback = filter.update(target)
+
+
+    let output = controller.update(target, feedback)
+
+
+    println("target=" + target.to_string() + " feedback=" + feedback.to_string() + " output=" + output.to_string())
+
+
+    i = i + 1
 
   }
 

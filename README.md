@@ -45,6 +45,12 @@ Work in progress.
 - Added integral anti-windup protection
 - Added PID parameter configuration interface
 
+### Day 4
+- Added digital filter module
+- Implemented first-order low-pass filter
+- Implemented moving average filter
+- Added reusable filtering interfaces for motion control signals
+
 ## Planned Features
 
 ### Control Algorithms
@@ -80,4 +86,4 @@ Work in progress.
 
 ## License
 
-MIT
+Apache-2.0

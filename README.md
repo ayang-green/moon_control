@@ -51,6 +51,12 @@ Work in progress.
 - Implemented moving average filter
 - Added reusable filtering interfaces for motion control signals
 
+### Day 5
+- Added trajectory planning module
+- Implemented trapezoidal velocity profile
+- Added position and velocity generation interface
+- Support acceleration and velocity constraints
+
 ## Planned Features
 
 ### Control Algorithms

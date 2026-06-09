@@ -3,6 +3,7 @@ import {
   "githubpro/moon_control/pid" @pid,
   "githubpro/moon_control/filter" @filter,
   "githubpro/moon_control/trajectory" @trajectory,
+  "githubpro/moon_control/motion_limit" @limit,
 }
 
 

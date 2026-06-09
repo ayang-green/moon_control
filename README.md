@@ -57,6 +57,13 @@ Work in progress.
 - Added position and velocity generation interface
 - Support acceleration and velocity constraints
 
+## Day 6
+- Added motion constraint module
+- Implemented velocity limiting
+- Implemented acceleration limiting
+- Implemented jerk limiting
+- Improved command smoothing for motion control
+
 ## Planned Features
 
 ### Control Algorithms

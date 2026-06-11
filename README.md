@@ -68,25 +68,33 @@ Work in progress.
 
 Integrated motion constraint module into the control pipeline.
 
-Control flow:
+## Day 7
+
+Added feedforward controller module.
+
+The control pipeline is extended to:
 
 Trajectory Planner
         |
         v
 Motion Limiter
         |
-        v
-Low Pass Filter
-        |
-        v
-PID Controller
+        +-------------+
+        |             |
+        v             v
+Feedforward       PID Controller
+        |             |
+        +------+------+
+               |
+               v
+          Control Output
 
+Features:
 
-The demo shows:
-- trajectory generation
-- command smoothing
-- feedback filtering
-- closed-loop control simulation
+- velocity feedforward
+- acceleration feedforward
+- combined feedforward and feedback control
+- improved dynamic response
 
 ## Planned Features
 

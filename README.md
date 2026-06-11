@@ -74,11 +74,15 @@ Trajectory Planner
         v
 Motion Limiter
         |
-        v
-Low Pass Filter
-        |
-        v
-PID Controller
+        +-------------+
+        |             |
+        v             v
+Feedforward       PID Controller
+        |             |
+        +------+------+
+               |
+               v
+          Control Output
 
 Features:
 

@@ -11,6 +11,8 @@ fn main {
 
   let controller = @pid.PID::new(1.0, 0.1, 0.01, 0.1)
 
+  let feedforward =@feedforward.FeedForward::new( 0.8, 0.2)
+
   let mut i = 0
 
   while i < 20 {
@@ -22,10 +24,13 @@ fn main {
 
     let feedback = filter.update(limited_target)
 
-    let output = controller.update(limited_target, feedback)
+    let pid_output = controller.update(limited_target, feedback)
 
-    println("target=" + target.to_string() + " limited=" + limited_target.to_string() + " feedback=" + feedback.to_string() + " output=" + output.to_string())
+    let ff_output = feedforward.update(limited_target, 0.1)
 
+    let output = pid_output + ff_output
+
+    println("target=" + target.to_string() + " limited=" + limited_target.to_string() + " ff=" + ff_output.to_string() + " pid=" + pid_output.to_string() + " output=" + output.to_string())
     i = i + 1
   }
 }

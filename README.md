@@ -57,6 +57,37 @@ Work in progress.
 - Added position and velocity generation interface
 - Support acceleration and velocity constraints
 
+### Day 6
+- Added motion constraint module
+- Implemented velocity limiting
+- Implemented acceleration limiting
+- Implemented jerk limiting
+- Improved command smoothing for motion control
+
+## Day 6 Demo
+
+Integrated motion constraint module into the control pipeline.
+
+Control flow:
+
+Trajectory Planner
+        |
+        v
+Motion Limiter
+        |
+        v
+Low Pass Filter
+        |
+        v
+PID Controller
+
+
+The demo shows:
+- trajectory generation
+- command smoothing
+- feedback filtering
+- closed-loop control simulation
+
 ## Planned Features
 
 ### Control Algorithms

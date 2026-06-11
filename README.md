@@ -64,12 +64,7 @@ Work in progress.
 - Implemented jerk limiting
 - Improved command smoothing for motion control
 
-## Day 6 Demo
-
-Integrated motion constraint module into the control pipeline.
-
 ## Day 7
-
 Added feedforward controller module.
 
 The control pipeline is extended to:

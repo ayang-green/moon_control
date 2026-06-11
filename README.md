@@ -69,14 +69,16 @@ Added feedforward controller module.
 
 The control pipeline is extended to:
 
-Trajectory
-    |
-    +---- Feedforward
-    |
-    +---- PID Feedback
-              |
-              v
-          Control Output
+Trajectory Planner
+        |
+        v
+Motion Limiter
+        |
+        v
+Low Pass Filter
+        |
+        v
+PID Controller
 
 Features:
 
